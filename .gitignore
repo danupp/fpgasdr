@@ -1,0 +1,17 @@
+
+*.bak
+*.tmp
+*~
+/output_files/*
+!/fpga/output_files/trx.jic
+!/fpga/output_files/trx.sof
+
+=======
+# Ignore OSX specific files
+*.DS_Store
+._*
+
+# Ignore emacs specific files
+.\#*
+\#*#
+

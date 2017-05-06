@@ -1,0 +1,241 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "ADC_nCS",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_nRDWR",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_nRESET",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_MCLK",
+					"strict" : false
+				},
+				{
+					"name" : "CODEC_RESET_N",
+					"strict" : false
+				},
+				{
+					"name" : "CODEC_MCLK",
+					"strict" : false
+				},
+				{
+					"name" : "CODEC_DIN",
+					"strict" : false
+				},
+				{
+					"name" : "CODEC_SCL",
+					"strict" : false
+				},
+				{
+					"name" : "DAC_RESETIQ",
+					"strict" : false
+				},
+				{
+					"name" : "DAC_SELECTIQ",
+					"strict" : false
+				},
+				{
+					"name" : "LED1",
+					"strict" : false
+				},
+				{
+					"name" : "LED2",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO3",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO4",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO6",
+					"strict" : false
+				},
+				{
+					"name" : "TCXO_nEN",
+					"strict" : false
+				},
+				{
+					"name" : "DAC_DATABUS[13]",
+					"strict" : false
+				},
+				{
+					"name" : "DAC_DATABUS[12]",
+					"strict" : false
+				},
+				{
+					"name" : "DAC_DATABUS[11]",
+					"strict" : false
+				},
+				{
+					"name" : "DAC_DATABUS[10]",
+					"strict" : false
+				},
+				{
+					"name" : "DAC_DATABUS[9]",
+					"strict" : false
+				},
+				{
+					"name" : "DAC_DATABUS[8]",
+					"strict" : false
+				},
+				{
+					"name" : "DAC_DATABUS[7]",
+					"strict" : false
+				},
+				{
+					"name" : "DAC_DATABUS[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DAC_DATABUS[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DAC_DATABUS[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DAC_DATABUS[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DAC_DATABUS[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DAC_DATABUS[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DAC_DATABUS[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SDA_TXD",
+					"strict" : false
+				},
+				{
+					"name" : "CODEC_SDA",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_DBus[15]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_DBus[14]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_DBus[13]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_DBus[12]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_DBus[11]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_DBus[10]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_DBus[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_DBus[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_DBus[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_DBus[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_DBus[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_DBus[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_DBus[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_DBus[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_DBus[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_DBus[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_tcxo",
+					"strict" : false
+				},
+				{
+					"name" : "JP3",
+					"strict" : false
+				},
+				{
+					"name" : "PTTn",
+					"strict" : false
+				},
+				{
+					"name" : "CODEC_SCLK",
+					"strict" : false
+				},
+				{
+					"name" : "CODEC_FS",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_nDRDY",
+					"strict" : false
+				},
+				{
+					"name" : "JP1",
+					"strict" : false
+				},
+				{
+					"name" : "SCL_RXD",
+					"strict" : false
+				},
+				{
+					"name" : "KEYn",
+					"strict" : false
+				},
+				{
+					"name" : "CODEC_DOUT",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

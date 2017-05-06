@@ -1,0 +1,53 @@
+--alt_mac_mult DATAA_CLEAR="NONE" DATAA_CLOCK="NONE" DATAA_WIDTH=6 DATAB_CLEAR="NONE" DATAB_CLOCK="NONE" DATAB_WIDTH=6 MULT_CLEAR="NONE" MULT_CLOCK="NONE" MULT_INPUT_A_IS_CONSTANT="NO" MULT_INPUT_B_IS_CONSTANT="NO" MULT_PIPELINE=0 MULT_REPRESENTATION_A="SIGNED" MULT_REPRESENTATION_B="SIGNED" OUTPUT_CLEAR="NONE" OUTPUT_CLOCK="NONE" OUTPUT_WIDTH=12 SIGNA_CLEAR="NONE" SIGNA_CLOCK="NONE" SIGNB_CLEAR="NONE" SIGNB_CLOCK="NONE" dataa datab dataout signa(vcc) signb(vcc) CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48 DEVICE_FAMILY="Cyclone IV E"
+--VERSION_BEGIN 15.1 cbx_alt_mac_mult 2016:01:20:19:04:45:SJ cbx_mgl 2016:01:20:20:20:04:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, the Altera Quartus Prime License Agreement,
+--  the Altera MegaCore Function License Agreement, or other 
+--  applicable license agreement, including, without limitation, 
+--  that your use is for the sole purpose of programming logic 
+--  devices manufactured by Altera and sold by Altera or its 
+--  authorized distributors.  Please refer to the applicable 
+--  agreement for further details.
+
+
+FUNCTION mult_bdo (dataa[5..0], datab[5..0])
+RETURNS ( result[11..0]);
+
+--synthesis_resources = lut 60 
+SUBDESIGN mac_mult_h6h1
+( 
+	dataa[5..0]	:	input;
+	datab[5..0]	:	input;
+	dataout[11..0]	:	output;
+	signa	:	input;
+	signb	:	input;
+) 
+VARIABLE 
+	mult1 : mult_bdo;
+	const_node_signa	: NODE;
+	const_node_signb	: NODE;
+	tmp_dataout[11..0]	: WIRE;
+	x_dataa[5..0]	: WIRE;
+	x_datab[5..0]	: WIRE;
+	x_output[11..0]	: WIRE;
+
+BEGIN 
+	mult1.dataa[] = x_dataa[];
+	mult1.datab[] = x_datab[];
+	dataout[] = tmp_dataout[];
+	const_node_signa = signa;
+	const_node_signb = signb;
+	tmp_dataout[] = x_output[];
+	x_dataa[] = ( dataa[]);
+	x_datab[] = ( datab[]);
+	x_output[11..0] = mult1.result[11..0];
+END;
+--VALID FILE

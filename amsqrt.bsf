@@ -1,0 +1,65 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 0 0 208 112)
+	(text "amsqrt" (rect 85 0 162 18)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 96 45 108)(font "Arial" ))
+	(port
+		(pt 0 48)
+		(input)
+		(text "radical[19..0]" (rect 0 0 148 15)(font "Arial" (font_size 8)))
+		(text "radical[19..0]" (rect 4 35 66 47)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 72 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "clk" (rect 0 0 31 15)(font "Arial" (font_size 8)))
+		(text "clk" (rect 4 51 18 63)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 72 64))
+	)
+	(port
+		(pt 208 48)
+		(output)
+		(text "q[9..0]" (rect 0 0 74 15)(font "Arial" (font_size 8)))
+		(text "q[9..0]" (rect 175 35 206 47)(font "Arial" (font_size 8)))
+		(line (pt 208 48)(pt 120 48)(line_width 3))
+	)
+	(port
+		(pt 208 64)
+		(output)
+		(text "remainder[10..0]" (rect 0 0 169 15)(font "Arial" (font_size 8)))
+		(text "remainder[10..0]" (rect 127 51 207 63)(font "Arial" (font_size 8)))
+		(line (pt 208 64)(pt 120 64)(line_width 3))
+	)
+	(drawing
+		(line (pt 0 0)(pt 210 0))
+		(line (pt 210 0)(pt 210 114))
+		(line (pt 0 114)(pt 210 114))
+		(line (pt 0 0)(pt 0 114))
+		(line (pt 72 32)(pt 120 32))
+		(line (pt 120 32)(pt 120 96))
+		(line (pt 72 96)(pt 120 96))
+		(line (pt 72 32)(pt 72 96))
+	)
+)

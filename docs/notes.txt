@@ -1,0 +1,25 @@
+
+conf
+0 TX
+1 KEY
+2 ssb_am
+3 wide_narrow
+4 usb_lsb
+5 fm
+6 tx_att 0
+7 tx_att 1
+8 rx_att 0
+9 rx_att 1
+10 -
+11 if_freq 0
+12 if_freq 1
+13 if_freq 2
+14 fconf / mod_a_b
+15 cw_tx_nomod
+
+
+
+if_freq 000 - 50.45 MHz
+if_freq 001 - 45 MHz
+if_freq 010 - 21.4 MHz
+if_freq 011 - 10.7 MHz

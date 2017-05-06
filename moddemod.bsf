@@ -1,0 +1,114 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 16 16 376 208)
+	(text "moddemod" (rect 5 0 89 15)(font "Liberation Sans" (font_size 8)))
+	(text "inst" (rect 8 176 45 188)(font "Liberation Sans" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk_in" (rect 0 0 63 15)(font "Liberation Sans" (font_size 8)))
+		(text "clk_in" (rect 21 27 84 42)(font "Liberation Sans" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "wide_narrow" (rect 0 0 116 15)(font "Liberation Sans" (font_size 8)))
+		(text "wide_narrow" (rect 21 43 137 58)(font "Liberation Sans" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "tx" (rect 0 0 21 15)(font "Liberation Sans" (font_size 8)))
+		(text "tx" (rect 21 59 42 74)(font "Liberation Sans" (font_size 8)))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "I_RX[9..0]" (rect 0 0 106 15)(font "Liberation Sans" (font_size 8)))
+		(text "I_RX[9..0]" (rect 21 75 127 90)(font "Liberation Sans" (font_size 8)))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "Q_RX[9..0]" (rect 0 0 106 15)(font "Liberation Sans" (font_size 8)))
+		(text "Q_RX[9..0]" (rect 21 91 127 106)(font "Liberation Sans" (font_size 8)))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "audio_in[9..0]" (rect 0 0 148 15)(font "Liberation Sans" (font_size 8)))
+		(text "audio_in[9..0]" (rect 21 107 169 122)(font "Liberation Sans" (font_size 8)))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "usb_lsb" (rect 0 0 74 15)(font "Liberation Sans" (font_size 8)))
+		(text "usb_lsb" (rect 21 123 95 138)(font "Liberation Sans" (font_size 8)))
+		(line (pt 0 128)(pt 16 128))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "ssb_am" (rect 0 0 63 15)(font "Liberation Sans" (font_size 8)))
+		(text "ssb_am" (rect 21 139 84 154)(font "Liberation Sans" (font_size 8)))
+		(line (pt 0 144)(pt 16 144))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "fm" (rect 0 0 21 15)(font "Liberation Sans" (font_size 8)))
+		(text "fm" (rect 21 155 42 170)(font "Liberation Sans" (font_size 8)))
+		(line (pt 0 160)(pt 16 160))
+	)
+	(port
+		(pt 360 32)
+		(output)
+		(text "audio_out[9..0]" (rect 0 0 159 15)(font "Liberation Sans" (font_size 8)))
+		(text "audio_out[9..0]" (rect 180 27 339 42)(font "Liberation Sans" (font_size 8)))
+		(line (pt 360 32)(pt 344 32)(line_width 3))
+	)
+	(port
+		(pt 360 48)
+		(output)
+		(text "I_TX[13..0]" (rect 0 0 116 15)(font "Liberation Sans" (font_size 8)))
+		(text "I_TX[13..0]" (rect 223 43 339 58)(font "Liberation Sans" (font_size 8)))
+		(line (pt 360 48)(pt 344 48)(line_width 3))
+	)
+	(port
+		(pt 360 64)
+		(output)
+		(text "Q_TX[13..0]" (rect 0 0 116 15)(font "Liberation Sans" (font_size 8)))
+		(text "Q_TX[13..0]" (rect 223 59 339 74)(font "Liberation Sans" (font_size 8)))
+		(line (pt 360 64)(pt 344 64)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 344 176))
+	)
+)

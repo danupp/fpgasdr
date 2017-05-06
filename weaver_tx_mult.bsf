@@ -1,0 +1,121 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 16 16 440 272)
+	(text "weaver_tx_mult" (rect 5 0 153 15)(font "Liberation Sans" (font_size 8)))
+	(text "inst" (rect 8 240 45 252)(font "Liberation Sans" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "CLK_A" (rect 0 0 53 15)(font "Liberation Sans" (font_size 8)))
+		(text "CLK_A" (rect 21 27 74 42)(font "Liberation Sans" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "CLK_B" (rect 0 0 53 15)(font "Liberation Sans" (font_size 8)))
+		(text "CLK_B" (rect 21 43 74 58)(font "Liberation Sans" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "I_data_in[13..0]" (rect 0 0 169 15)(font "Liberation Sans" (font_size 8)))
+		(text "I_data_in[13..0]" (rect 21 59 190 74)(font "Liberation Sans" (font_size 8)))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "I_LO_in_A[13..0]" (rect 0 0 169 15)(font "Liberation Sans" (font_size 8)))
+		(text "I_LO_in_A[13..0]" (rect 21 75 190 90)(font "Liberation Sans" (font_size 8)))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "I_LO_in_B[13..0]" (rect 0 0 169 15)(font "Liberation Sans" (font_size 8)))
+		(text "I_LO_in_B[13..0]" (rect 21 91 190 106)(font "Liberation Sans" (font_size 8)))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "modsel_A_B" (rect 0 0 106 15)(font "Liberation Sans" (font_size 8)))
+		(text "modsel_A_B" (rect 21 107 127 122)(font "Liberation Sans" (font_size 8)))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "Q_data_in[13..0]" (rect 0 0 169 15)(font "Liberation Sans" (font_size 8)))
+		(text "Q_data_in[13..0]" (rect 21 123 190 138)(font "Liberation Sans" (font_size 8)))
+		(line (pt 0 128)(pt 16 128)(line_width 3))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "Q_LO_in_A[13..0]" (rect 0 0 169 15)(font "Liberation Sans" (font_size 8)))
+		(text "Q_LO_in_A[13..0]" (rect 21 139 190 154)(font "Liberation Sans" (font_size 8)))
+		(line (pt 0 144)(pt 16 144)(line_width 3))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "Q_LO_in_B[13..0]" (rect 0 0 169 15)(font "Liberation Sans" (font_size 8)))
+		(text "Q_LO_in_B[13..0]" (rect 21 155 190 170)(font "Liberation Sans" (font_size 8)))
+		(line (pt 0 160)(pt 16 160)(line_width 3))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "usb_lsb" (rect 0 0 74 15)(font "Liberation Sans" (font_size 8)))
+		(text "usb_lsb" (rect 21 171 95 186)(font "Liberation Sans" (font_size 8)))
+		(line (pt 0 176)(pt 16 176))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "enable" (rect 0 0 63 15)(font "Liberation Sans" (font_size 8)))
+		(text "enable" (rect 21 187 84 202)(font "Liberation Sans" (font_size 8)))
+		(line (pt 0 192)(pt 16 192))
+	)
+	(port
+		(pt 0 208)
+		(input)
+		(text "clk_data" (rect 0 0 84 15)(font "Liberation Sans" (font_size 8)))
+		(text "clk_data" (rect 21 203 105 218)(font "Liberation Sans" (font_size 8)))
+		(line (pt 0 208)(pt 16 208))
+	)
+	(port
+		(pt 424 32)
+		(output)
+		(text "Mod_data_out[13..0]" (rect 0 0 201 15)(font "Liberation Sans" (font_size 8)))
+		(text "Mod_data_out[13..0]" (rect 202 27 403 42)(font "Liberation Sans" (font_size 8)))
+		(line (pt 424 32)(pt 408 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 408 240))
+	)
+)
