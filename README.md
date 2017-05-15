@@ -39,4 +39,9 @@ Please refer to the [register map](/docs/register-map.org) for more information 
 
 2017-04-17: (built jic binary)
 	* Squelch implemented.
-	
+
+2017-05-15:
+	* Added post agc audio filter in TX
+	* Increased mic gain in codec
+	* Slower agc/compressor release in TX
+	* Larger compressor dynamic

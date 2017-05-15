@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="clkctrl_main" kind="clkctrl_main" version="1.0" fabric="QSYS">
  <!-- Format version 15.1 193 (Future versions may contain additional information.) -->
- <!-- 2017.04.16.21:45:44 -->
+ <!-- 2017.05.13.23:57:21 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1492371944</value>
+  <value>1494712641</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
