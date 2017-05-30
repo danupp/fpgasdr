@@ -45,3 +45,8 @@ Please refer to the [register map](/docs/register-map.org) for more information 
 	* Increased mic gain in codec
 	* Slower agc/compressor release in TX
 	* Larger compressor dynamic
+
+2017-05-30: (built jic binary)
+	* Fixed small bug in AGC
+	* Bypassed audio filter after demodulator. It is probably not necessary.
+

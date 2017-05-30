@@ -42,11 +42,11 @@ begin
 	
 	p0: process (clk_in)
 	variable peak_a : integer range 0 to 22;
-	variable agc_a : integer range 8 to 22 := 16;
+	variable agc_a, agc_a_I, agc_a_Q : integer range 8 to 22 := 16;
 	variable peak_b, peak_b_old : integer range 0 to 2047 := 0;
-	variable agc_b : integer range 16 to 31 := 16;
+	variable agc_b, agc_b_I, agc_b_Q : integer range 16 to 31 := 16;
 	variable ticks, timelim : integer range 0 to 99999 := 0;
-	constant timelim_rx : integer := 3000;
+	constant timelim_rx : integer := 4000;
 	constant timelim_tx : integer := 12000;
 	variable Data_out_I_t, Data_out_Q_t : signed(9 downto 0);
 
@@ -64,12 +64,13 @@ begin
             end if;
          end loop;
 
-			if agc_a < 21 and peak_b < to_integer(abs(Data_in_I_reg(agc_a + 3 downto agc_a - 8))) then
+			if agc_a < 21 and 
+			( peak_b < to_integer(abs(Data_in_I_reg(agc_a + 3 downto agc_a - 8))) or peak_b < to_integer(abs(Data_in_Q_reg(agc_a + 3 downto agc_a - 8))) ) then
 				peak_b := to_integer(abs(Data_in_I_reg(agc_a + 3 downto agc_a - 8)));
 				if peak_b < to_integer(abs(Data_in_Q_reg(agc_a + 3 downto agc_a - 8))) then
 					peak_b := to_integer(abs(Data_in_Q_reg(agc_a + 3 downto agc_a - 8)));
 				end if;
-			elsif	peak_b < to_integer(abs(Data_in_I_reg(23 downto 13))) then
+			elsif	peak_b < to_integer(abs(Data_in_I_reg(23 downto 13))) or peak_b < to_integer(abs(Data_in_Q_reg(23 downto 13)))then
 				peak_b := to_integer(abs(Data_in_I_reg(23 downto 13)));
 				if peak_b < to_integer(abs(Data_in_Q_reg(23 downto 13))) then
 					peak_b := to_integer(abs(Data_in_Q_reg(23 downto 13)));
@@ -89,7 +90,11 @@ begin
 				peak_a > agc_a + 1 or 
 				ticks > timelim then
 				
-				if (peak_b > 761 and agc_a < 21) or peak_a > agc_a + 1 then
+				if peak_a > agc_a + 1 then
+					agc_a := peak_a;
+					agc_b := 16;
+					
+				elsif (peak_b > 761 and agc_a < 21) or peak_a = agc_a + 1 then
 					agc_a := agc_a + 2;		-- -4
 					agc_b := 31;				-- 1 + 15/16
 			
@@ -252,25 +257,41 @@ begin
 				
          end if;
 
-			if agc_a < 9 then
+			--if Data_out_I_reg(9 downto 5) = "00000" or Data_out_I_reg(9 downto 5) = "11111" then
+				agc_a_I := agc_a;
+				agc_b_I := agc_b;
+			--end if;
+			
+			--if Data_out_Q_reg(9 downto 5) = "00000" or Data_out_Q_reg(9 downto 5) = "11111" then
+				agc_a_Q := agc_a;
+				agc_b_Q := agc_b;
+			--end if;
+			
+			if agc_a_I < 9 then
 				Data_out_I_t := Data_in_I_reg(9 downto 0);
-				Data_out_Q_t := Data_in_Q_reg(9 downto 0);
-			elsif (agc_a < 22) and (agc_a > 8) then
-            Data_out_I_t := signed(Data_in_I_reg + signed(signed'("000000000000000000000001") sll (agc_a - 9)))(agc_a + 1 downto agc_a - 8);
-				Data_out_Q_t := signed(Data_in_Q_reg + signed(signed'("000000000000000000000001") sll (agc_a - 9)))(agc_a + 1 downto agc_a - 8);
+			elsif (agc_a_I < 22) and (agc_a_I > 8) then
+            Data_out_I_t := signed(Data_in_I_reg + signed(signed'("000000000000000000000001") sll (agc_a_I - 9)))(agc_a_I + 1 downto agc_a_I - 8);
 			else
             Data_out_I_t := signed(Data_in_I_reg + to_signed(8192,24))(23 downto 14);
+			end if;
+
+			if agc_a_Q < 9 then
+				Data_out_Q_t := Data_in_Q_reg(9 downto 0);
+			elsif (agc_a_Q < 22) and (agc_a_Q > 8) then
+				Data_out_Q_t := signed(Data_in_Q_reg + signed(signed'("000000000000000000000001") sll (agc_a_Q - 9)))(agc_a_Q + 1 downto agc_a_Q - 8);
+			else
 				Data_out_Q_t := signed(Data_in_Q_reg + to_signed(8192,24))(23 downto 14);
 			end if;
-					
-			Data_out_I_reg <= std_logic_vector(Data_out_I_t * to_signed(agc_b,6))(13 downto 4);
-			Data_out_Q_reg <= std_logic_vector(Data_out_Q_t * to_signed(agc_b,6))(13 downto 4);
+			
+			Data_out_I_reg <= std_logic_vector(Data_out_I_t * to_signed(agc_b_I,6))(13 downto 4);
+			Data_out_Q_reg <= std_logic_vector(Data_out_Q_t * to_signed(agc_b_Q,6))(13 downto 4);
 			
 		end if;
 	end process;    
 
 
 end tx_rx_agc_arch;
+
 
 library ieee;
 use ieee.std_logic_1164.ALL;

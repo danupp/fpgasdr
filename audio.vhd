@@ -724,3 +724,28 @@ begin
 	end process;
 	
 end filter_arch;
+
+library ieee;
+use ieee.std_logic_1164.ALL;
+use ieee.numeric_std.ALL;
+
+entity audio_filt_bypass is
+	port (RX_audio_in : in std_logic_vector(9 downto 0);
+			TX_audio_in : in std_logic_vector(9 downto 0);
+			audio_out : out std_logic_vector(15 downto 0);
+			clk_in : in std_logic; -- 20 MHz
+			clk_sample : in std_logic;
+			ssb_am : in std_logic;
+			wide_narrow : in std_logic;
+			tx : in std_logic
+			);
+end audio_filt_bypass;
+
+architecture filter_arch of audio_filt_bypass is
+
+begin
+
+audio_out <= RX_audio_in & "000000" when tx = '0' else
+				 TX_audio_in & "000000";
+		
+end filter_arch;
