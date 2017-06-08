@@ -18,7 +18,6 @@ entity setup_interface is
 			tx : out std_logic := '0';
 			key : out std_logic := '0';
 			usb_lsb : out std_logic := '0';
-			lo_high : out std_logic := '0';
 			audio_conf_strobe : out std_logic;
 			status_out : out std_logic_vector(7 downto 0);
 			cw_tx_nomod : out std_logic := '1';
@@ -27,7 +26,8 @@ entity setup_interface is
 			rx_att : out std_logic_vector(1 downto 0);
 			tx_att : out std_logic_vector(1 downto 0);
 			fm : out std_logic;
-			squelch : out std_logic_vector(5 downto 0)
+			squelch : out std_logic_vector(5 downto 0);
+			twotone : out std_logic
 			);
 end setup_interface;
 
@@ -52,7 +52,7 @@ begin
 					key <= addr(1);
 					cw_tx_nomod <= data(21);
 					fconf <= data(19);
-					lo_high <= data(18);
+					twotone <= data(17);
 					tx_att <= data(31 downto 30);
 					rx_att <= data(28 downto 27);
 					if_freq <= data(25 downto 23);

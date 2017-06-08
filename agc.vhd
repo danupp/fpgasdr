@@ -225,14 +225,12 @@ begin
 				elsif peak_b > 99 and agc_a > 8 then
 					agc_a := agc_a - 1; 		-- +2
 					agc_b := 30;		  		-- 1 + 14/16 			
-				elsif peak_b > 95 and agc_a > 8 then
-					agc_a := agc_a - 1; 		-- +2
-					agc_b := 31;		  		-- 1 + 15/16 	
-					
-				elsif peak_b < 96 and agc_a > 9 then 
+				elsif agc_a > 9 then 
 					agc_a := agc_a - 2;		-- +4
 					agc_b := 16;				-- 1
-					
+				elsif agc_a > 8 then
+					agc_a := agc_a - 1; 		-- +2
+					agc_b := 31;		  		-- 1 + 15/16 						
 				elsif agc_a = 8 then 
 					agc_b := 31;				
 				end if;

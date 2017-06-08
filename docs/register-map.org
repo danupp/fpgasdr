@@ -36,9 +36,9 @@ Variable values are explained in the table further down.
 |      |  22 | reserved    | freq     | reserved   |
 |      |  21 | cw_tx_nomod    | freq     | reserved   |
 |      |  20 | reserved    | freq     | reserved   |
-|      |  19 | fconf    | freq     | reserved   |
-|      |  18 | reserved    | freq     | reserved   |
-|      |  17 | reserved    | freq     | reserved   |
+|      |  19 | fconf       | freq     | reserved   |
+|      |  18 | reserved     | freq     | reserved   |
+|      |  17 | twotone    | freq     | reserved   |
 |      |  16 | reserved    | freq     | reserved   |
 |    3 |  15 | reserved    | freq     | reserved   |
 |      |  14 | reserved    | freq     | reserved   |
@@ -69,6 +69,7 @@ Variable values are explained in the table further down.
 | key:              | 1: Forced CW key, 0: Controlled by KEY pin                                                        |
 | fconf:           | 1: Indirect frequency mode with external LO synth, 0: Direct mode                                  |
 | cw_tx_nomod:    | 1: Bypass weaver modulator in CW TX (clean spectrum), 0: Modulate with audio tone 			|
+| twotone:    | 1: CW modulation tone is two tones, for IM3 test 0: Normal single tone mode 			|
 | tx_att[1..0]:    | TX attenuation in steps of 6dB, 00: Full TX power                                                  |
 | rx_att[1..0]:    | RX attenuation in steps of 6dB, 00: Full RX gain          						|
 | if_freq[2..0:    | 001: IF=45MHz, 010: IF=21.4MHz         								|

@@ -50,3 +50,7 @@ Please refer to the [register map](/docs/register-map.org) for more information 
 	* Fixed small bug in AGC
 	* Bypassed audio filter after demodulator. It is probably not necessary.
 
+2017-06-08: (built jic binary)
+	* Another small fix in AGC
+	* Implemented two-tone generation for TX IM measurement. Updated register map.
+

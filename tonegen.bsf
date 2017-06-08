@@ -4,7 +4,7 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -21,9 +21,9 @@ agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 280 112)
+	(rect 16 16 296 144)
 	(text "tonegen" (rect 5 0 79 15)(font "Liberation Sans" (font_size 8)))
-	(text "inst" (rect 8 80 45 92)(font "Liberation Sans" ))
+	(text "inst" (rect 8 112 45 124)(font "Liberation Sans" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -46,13 +46,20 @@ agreement for further details.
 		(line (pt 0 64)(pt 16 64))
 	)
 	(port
-		(pt 264 32)
+		(pt 0 80)
+		(input)
+		(text "twotone" (rect 0 0 74 15)(font "Liberation Sans" (font_size 8)))
+		(text "twotone" (rect 21 75 95 90)(font "Liberation Sans" (font_size 8)))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 280 32)
 		(output)
 		(text "tone_out[9..0]" (rect 0 0 148 15)(font "Liberation Sans" (font_size 8)))
-		(text "tone_out[9..0]" (rect 95 27 243 42)(font "Liberation Sans" (font_size 8)))
-		(line (pt 264 32)(pt 248 32)(line_width 3))
+		(text "tone_out[9..0]" (rect 111 27 259 42)(font "Liberation Sans" (font_size 8)))
+		(line (pt 280 32)(pt 264 32)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 248 80))
+		(rectangle (rect 16 16 264 112))
 	)
 )

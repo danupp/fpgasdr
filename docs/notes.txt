@@ -10,7 +10,7 @@ conf
 7 tx_att 1
 8 rx_att 0
 9 rx_att 1
-10 -
+10 twotone
 11 if_freq 0
 12 if_freq 1
 13 if_freq 2
