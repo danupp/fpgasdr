@@ -54,3 +54,5 @@ Please refer to the [register map](/docs/register-map.org) for more information 
 	* Another small fix in AGC
 	* Implemented two-tone generation for TX IM measurement. Updated register map.
 
+2017-06-23: (built jic binary)
+	* Faster AGC/compressor release when going into TX, makes it faster to get full power level.

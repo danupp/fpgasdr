@@ -47,11 +47,16 @@ begin
 	variable agc_b, agc_b_I, agc_b_Q : integer range 16 to 31 := 16;
 	variable ticks, timelim : integer range 0 to 99999 := 0;
 	constant timelim_rx : integer := 4000;
-	constant timelim_tx : integer := 12000;
+	constant timelim_tx : integer := 8000;
 	variable Data_out_I_t, Data_out_Q_t : signed(9 downto 0);
 
 	begin
 		if clk_in'event and clk_in = '1' then
+		
+			if tx='1' and agc_a > 15 then
+				agc_a := 15;
+			end if;
+				
 			for n in 22 downto 0 loop
             if (Data_in_I_reg(23) = '0' and Data_in_I_reg(n) = '1') or
 					(Data_in_I_reg(23) = '1' and Data_in_I_reg(n) = '0') or

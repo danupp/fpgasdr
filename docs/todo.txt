@@ -1,12 +1,12 @@
-* Modulation även i DAC A - gör klart och testa
+* Modulation även i DAC A - gör klart och testa - klart
 * Ett rent CW-läge - experimentellt klart
 * Ställbar RX-gain - klart
 * Ställbar TX-gain i fler steg - klart
-* CW TX timer
-* Ext ref
-* FM
+* CW TX timer - issue skapad
+* Ext ref - issue skapad
+* FM - issue skapad
 * Audio RX-filter för CW narrow - klart
-* Bättre uppsampling
-* Dithering i audiosampling i TX?
-* Audio in/ut på I2S
+* Bättre uppsampling - issue skapd
+* Dithering i audiosampling i TX? - ingår i issue om uppsampling
+* Audio in/ut på I2S - issue skapad
 
