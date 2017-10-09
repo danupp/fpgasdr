@@ -60,11 +60,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "TCXO_nEN",
+					"strict" : false
+				},
+				{
 					"name" : "GPIO6",
 					"strict" : false
 				},
 				{
-					"name" : "TCXO_nEN",
+					"name" : "GPIO5",
 					"strict" : false
 				},
 				{
@@ -212,15 +216,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "CODEC_FS",
-					"strict" : false
-				},
-				{
 					"name" : "ADC_nDRDY",
 					"strict" : false
 				},
 				{
 					"name" : "JP1",
+					"strict" : false
+				},
+				{
+					"name" : "CODEC_FS",
 					"strict" : false
 				},
 				{

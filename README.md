@@ -56,3 +56,7 @@ Please refer to the [register map](/docs/register-map.org) for more information 
 
 2017-06-23: (built jic binary)
 	* Faster AGC/compressor release when going into TX, makes it faster to get full power level.
+
+2017-10-09:
+	* Experimental audio output in I2S at 39ksps.
+

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2017.06.23.20:58:30"
+ date="2017.10.09.22:49:53"
  outputDirectory="/home/d/devel/dspsdr/fpga/db/ip/clkctrl_main/">
  <perimeter>
   <parameter
@@ -48,12 +48,12 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="clkctrl_main:1.0:AUTO_DEVICE=EP4CE10E22C8,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=8,AUTO_GENERATION_ID=1498244308,AUTO_UNIQUE_ID=(altclkctrl:15.1:CLOCK_TYPE=1,DEVICE_FAMILY=Cyclone IV E,ENA_REGISTER_MODE=1,GUI_USE_ENA=false,NUMBER_OF_CLOCKS=2,USE_GLITCH_FREE_SWITCH_OVER_IMPLEMENTATION=false)"
+   parameterizationKey="clkctrl_main:1.0:AUTO_DEVICE=EP4CE10E22C8,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=8,AUTO_GENERATION_ID=1507582191,AUTO_UNIQUE_ID=(altclkctrl:15.1:CLOCK_TYPE=1,DEVICE_FAMILY=Cyclone IV E,ENA_REGISTER_MODE=1,GUI_USE_ENA=false,NUMBER_OF_CLOCKS=2,USE_GLITCH_FREE_SWITCH_OVER_IMPLEMENTATION=false)"
    instancePathKey="clkctrl_main"
    kind="clkctrl_main"
    version="1.0"
    name="clkctrl_main">
-  <parameter name="AUTO_GENERATION_ID" value="1498244308" />
+  <parameter name="AUTO_GENERATION_ID" value="1507582191" />
   <parameter name="AUTO_DEVICE" value="EP4CE10E22C8" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="AUTO_UNIQUE_ID" value="" />

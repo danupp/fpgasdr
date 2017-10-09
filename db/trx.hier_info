@@ -11,6 +11,7 @@ clk_tcxo => audio_filt_bypass:inst17.clk_in
 clk_tcxo => clkdiv:inst1.clk_in
 clk_tcxo => pll_dac:inst2.inclk0
 clk_tcxo => tx_upsample2:inst.clk20
+clk_tcxo => i2s_out:inst20.clk0
 PTTn => inst14.IN0
 SCL_RXD => control_interface:inst11.SCL-RXD
 JP1 => control_interface:inst11.I2C_UART_select
@@ -57,9 +58,10 @@ LED1 <= clkdiv:inst1.clk_slow
 LED2 <= inst99.DB_MAX_OUTPUT_PORT_TYPE
 JP3 => inst99.IN0
 GPIO3 <= tx_upsample2:inst.clk_out
-GPIO4 <= CODEC_SDA.DB_MAX_OUTPUT_PORT_TYPE
-GPIO6 <= tx_rx_clock_mux:inst8.clk_out
+GPIO4 <= i2s_out:inst20.lrclk
 TCXO_nEN <= inst99.DB_MAX_OUTPUT_PORT_TYPE
+GPIO6 <= i2s_out:inst20.dout
+GPIO5 <= i2s_out:inst20.bclk
 DAC_DATABUS[0] <= dac5672_interface:inst3.DA[0]
 DAC_DATABUS[1] <= dac5672_interface:inst3.DA[1]
 DAC_DATABUS[2] <= dac5672_interface:inst3.DA[2]
@@ -10283,5 +10285,32 @@ q_a[10] <= ram_block1a10.PORTADATAOUT
 q_a[11] <= ram_block1a11.PORTADATAOUT
 q_a[12] <= ram_block1a12.PORTADATAOUT
 q_a[13] <= ram_block1a13.PORTADATAOUT
+
+
+|trx|i2s_out:inst20
+clk0 => clockdiv[0].CLK
+clk0 => clockdiv[1].CLK
+clk0 => clockdiv[2].CLK
+clk0 => clockdiv[3].CLK
+sample_clk => sample.CLK
+data_in[0] => data_reg_1[0].DATAIN
+data_in[1] => data_reg_1[1].DATAIN
+data_in[2] => data_reg_1[2].DATAIN
+data_in[3] => data_reg_1[3].DATAIN
+data_in[4] => data_reg_1[4].DATAIN
+data_in[5] => data_reg_1[5].DATAIN
+data_in[6] => data_reg_1[6].DATAIN
+data_in[7] => data_reg_1[7].DATAIN
+data_in[8] => data_reg_1[8].DATAIN
+data_in[9] => data_reg_1[9].DATAIN
+data_in[10] => data_reg_1[10].DATAIN
+data_in[11] => data_reg_1[11].DATAIN
+data_in[12] => data_reg_1[12].DATAIN
+data_in[13] => data_reg_1[13].DATAIN
+data_in[14] => data_reg_1[14].DATAIN
+data_in[15] => data_reg_1[15].DATAIN
+bclk <= clockdiv[3].DB_MAX_OUTPUT_PORT_TYPE
+lrclk <= lrclk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout <= data_reg_2[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
