@@ -3,8 +3,8 @@
 *.tmp
 *~
 /output_files/*
-!/fpga/output_files/trx.jic
-!/fpga/output_files/trx.sof
+!/output_files/trx.jic
+!/output_files/trx.sof
 
 =======
 # Ignore OSX specific files

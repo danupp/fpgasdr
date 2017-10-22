@@ -60,3 +60,7 @@ Please refer to the [register map](/docs/register-map.org) for more information 
 2017-10-09:
 	* Experimental audio output in I2S at 39ksps.
 
+2017-10-22:
+	* Raw IQ available as I2S.
+	* Modified .gitignore not to remove trx.sof and trx.jic in output_files
+

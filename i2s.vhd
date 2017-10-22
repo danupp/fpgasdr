@@ -6,7 +6,10 @@ use ieee.numeric_std.ALL;
 entity i2s_out is
 	port (clk0 : in std_logic;
 			sample_clk : in std_logic;
-			data_in : in std_logic_vector(15 downto 0);
+			audio_data_in : in std_logic_vector(15 downto 0);
+			I_data_in : in std_logic_vector(23 downto 0);
+			Q_data_in : in std_logic_vector(23 downto 0);
+			audio_iq_sel : in std_logic;
 			--enable : in std_logic;
 			bclk : buffer std_logic;
 			lrclk : out std_logic;
@@ -16,17 +19,22 @@ end i2s_out;
 
 architecture arch of i2s_out is
 
-signal data_reg_1 : std_logic_vector(15 downto 0);
-signal data_reg_2 : std_logic_vector(15 downto 0);
+signal data_in_l, data_in_r : std_logic_vector(23 downto 0);
+signal data_reg_1, data_reg_2 : std_logic_vector(31 downto 0);
 signal sample : std_logic;
 signal sample_rst : std_logic;
 signal clockdiv : unsigned(3 downto 0);
  
 begin
 
-	dout <= data_reg_2(15);
-	bclk <= clockdiv(3);
-	
+	dout <= data_reg_2(31);
+	bclk <= clockdiv(3) when audio_iq_sel = '1' else
+			  clockdiv(2);
+	data_in_l <= audio_data_in & "00000000" when audio_iq_sel = '1' else
+					 I_data_in;
+	data_in_r <= "000000000000000000000000" when audio_iq_sel = '1' else
+					 Q_data_in;
+			
 	clockdivider : process(clk0)
 	begin
 		if clk0'event and clk0 = '1' then
@@ -44,26 +52,35 @@ begin
 	end process;
 
 	bitclk : process(bclk)
-	variable bitcount : integer range 0 to 31;
+	variable bitcount : integer range 0 to 63;
 	begin
 		if bclk'event and bclk = '0' then
 			if sample = '1' then
-				data_reg_1 <= data_in;
+				data_reg_1 <= data_in_l & "00000000";
 				sample_rst <= '1';
-				bitcount := 31;
+				bitcount := 63;
 				lrclk <= '0';
-				data_reg_2 <= data_reg_2(14 downto 0) & '0';
-			elsif bitcount = 31 then
+				data_reg_2 <= data_reg_2(30 downto 0) & '0';
+			elsif bitcount = 63 then
 				bitcount := 0;
 				data_reg_2 <= data_reg_1;
 				sample_rst <= '0';
-			elsif bitcount = 14 then
+			elsif bitcount = 14 and audio_iq_sel = '1' then
+				bitcount := 30;
+				data_reg_2 <= data_reg_2(30 downto 0) & '0';
+			elsif bitcount = 30 then
 				lrclk <= '1';
-				bitcount := 15;
-				data_reg_2 <= data_reg_2(14 downto 0) & '0';
+				bitcount := 31;
+				data_reg_1 <= data_in_r & "00000000";
+				data_reg_2 <= data_reg_2(30 downto 0) & '0';
+			elsif bitcount = 31 then
+				bitcount := 32;
+				data_reg_2 <= data_reg_1;
+			elsif bitcount = 46 and audio_iq_sel = '1' then
+				bitcount := 63;
 			else
 				bitcount := bitcount + 1;
-				data_reg_2 <= data_reg_2(14 downto 0) & '0';
+				data_reg_2 <= data_reg_2(30 downto 0) & '0';
 			end if;
 		end if;
 	end process;
