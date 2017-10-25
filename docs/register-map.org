@@ -39,8 +39,8 @@ Variable values are explained in the table further down.
 |      |  19 | fconf       | freq     | reserved   |
 |      |  18 | reserved     | freq     | reserved   |
 |      |  17 | twotone    | freq     | reserved   |
-|      |  16 | reserved    | freq     | reserved   |
-|    3 |  15 | reserved    | freq     | reserved   |
+|      |  16 | i2s_enable    | freq     | reserved   |
+|    3 |  15 | i2s_iq_audio    | freq     | reserved   |
 |      |  14 | reserved    | freq     | reserved   |
 |      |  13 | reserved    | freq     | squelch	   |
 |      |  12 | reserved    | freq     | squelch	   |
@@ -70,6 +70,8 @@ Variable values are explained in the table further down.
 | fconf:           | 1: Indirect frequency mode with external LO synth, 0: Direct mode                                  |
 | cw_tx_nomod:    | 1: Bypass weaver modulator in CW TX (clean spectrum), 0: Modulate with audio tone 			|
 | twotone:    | 1: CW modulation tone is two tones, for IM3 test 0: Normal single tone mode 			|
+| i2s_enable:		| 1: i2s output on GPIOs, 0: i2s disabled |
+| i2s_iq_audio :  | 1: i2s data is raw IQ 0: i2s is demodulated audio, compatible with MAX98357A  |
 | tx_att[1..0]:    | TX attenuation in steps of 6dB, 00: Full TX power                                                  |
 | rx_att[1..0]:    | RX attenuation in steps of 6dB, 00: Full RX gain          						|
 | if_freq[2..0:    | 001: IF=45MHz, 010: IF=21.4MHz         								|
@@ -107,3 +109,9 @@ Simply transmit [0x00 0x00 0x00 0x00 0x00] to read without altering any register
 |      0 | RSSI     | LSB  				    |
 
 
+** I2S
+
+When i2s is enabled, LRCLK/FS is GPIO4, BCLK is GPIO5 and DOUT is GPIO6. 
+39.0625 ksps. 32 bit mode for IQ and 16 bit mode for audio.
+IQ is 2x24 bits padded with 8 LSB zeroes.
+Note that I and Q are reversed if using LO above IF.

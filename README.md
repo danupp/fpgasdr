@@ -64,3 +64,6 @@ Please refer to the [register map](/docs/register-map.org) for more information 
 	* Raw IQ available as I2S.
 	* Modified .gitignore not to remove trx.sof and trx.jic in output_files
 
+2017-10-25:
+	* I2S output now controllable from register. See register map for details.
+	

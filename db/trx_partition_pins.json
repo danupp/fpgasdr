@@ -216,10 +216,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "JP2",
-					"strict" : false
-				},
-				{
 					"name" : "ADC_nDRDY",
 					"strict" : false
 				},

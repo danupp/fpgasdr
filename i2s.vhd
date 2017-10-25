@@ -9,7 +9,8 @@ entity i2s_out is
 			audio_data_in : in std_logic_vector(15 downto 0);
 			I_data_in : in std_logic_vector(23 downto 0);
 			Q_data_in : in std_logic_vector(23 downto 0);
-			audio_iq_sel : in std_logic;
+			iq_audio_sel : in std_logic;
+			enable : in std_logic;
 			--enable : in std_logic;
 			bclk : buffer std_logic;
 			lrclk : out std_logic;
@@ -28,16 +29,16 @@ signal clockdiv : unsigned(3 downto 0);
 begin
 
 	dout <= data_reg_2(31);
-	bclk <= clockdiv(3) when audio_iq_sel = '1' else
+	bclk <= clockdiv(3) when iq_audio_sel = '0' else
 			  clockdiv(2);
-	data_in_l <= audio_data_in & "00000000" when audio_iq_sel = '1' else
+	data_in_l <= audio_data_in & "00000000" when iq_audio_sel = '0' else
 					 I_data_in;
-	data_in_r <= "000000000000000000000000" when audio_iq_sel = '1' else
+	data_in_r <= "000000000000000000000000" when iq_audio_sel = '0' else
 					 Q_data_in;
 			
 	clockdivider : process(clk0)
 	begin
-		if clk0'event and clk0 = '1' then
+		if clk0'event and clk0 = '1' and enable = '1' then
 			clockdiv <= clockdiv + 1;
 		end if;
 	end process;
@@ -65,7 +66,7 @@ begin
 				bitcount := 0;
 				data_reg_2 <= data_reg_1;
 				sample_rst <= '0';
-			elsif bitcount = 14 and audio_iq_sel = '1' then
+			elsif bitcount = 14 and iq_audio_sel = '0' then
 				bitcount := 30;
 				data_reg_2 <= data_reg_2(30 downto 0) & '0';
 			elsif bitcount = 30 then
@@ -76,8 +77,9 @@ begin
 			elsif bitcount = 31 then
 				bitcount := 32;
 				data_reg_2 <= data_reg_1;
-			elsif bitcount = 46 and audio_iq_sel = '1' then
+			elsif bitcount = 46 and iq_audio_sel = '0' then
 				bitcount := 63;
+				data_reg_2 <= data_reg_2(30 downto 0) & '0';
 			else
 				bitcount := bitcount + 1;
 				data_reg_2 <= data_reg_2(30 downto 0) & '0';

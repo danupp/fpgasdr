@@ -253,4 +253,5 @@ set_global_assignment -name QIP_FILE sin_DACA.qip
 set_global_assignment -name QIP_FILE atantableIQ.qip
 set_global_assignment -name VHDL_FILE fm_blocks.vhd
 set_global_assignment -name VHDL_FILE i2s.vhd
+set_global_assignment -name CDF_FILE docs/Chain3.cdf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

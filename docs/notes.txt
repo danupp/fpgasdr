@@ -16,6 +16,8 @@ conf
 13 if_freq 2
 14 fconf / mod_a_b
 15 cw_tx_nomod
+16 i2s_enable
+17 i2s_iq_audio
 
 
 

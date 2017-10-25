@@ -27,7 +27,9 @@ entity setup_interface is
 			tx_att : out std_logic_vector(1 downto 0);
 			fm : out std_logic;
 			squelch : out std_logic_vector(5 downto 0);
-			twotone : out std_logic
+			twotone : out std_logic;
+			i2s_enable : out std_logic;
+			i2s_iq_audio : out std_logic
 			);
 end setup_interface;
 
@@ -53,6 +55,8 @@ begin
 					cw_tx_nomod <= data(21);
 					fconf <= data(19);
 					twotone <= data(17);
+					i2s_enable <= data(16);
+					i2s_iq_audio <= data(15);
 					tx_att <= data(31 downto 30);
 					rx_att <= data(28 downto 27);
 					if_freq <= data(25 downto 23);
