@@ -67,3 +67,5 @@ Please refer to the [register map](/docs/register-map.org) for more information 
 2017-10-25:
 	* I2S output now controllable from register. See register map for details.
 	
+2017-11-19:
+   * With I2S enabled, stream to codec now connected to I2S input.

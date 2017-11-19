@@ -8,7 +8,7 @@ entity audiomux_sp is
 			TX_Audio : in std_logic_vector(9 downto 0);
 			CW_Audio : in std_logic_vector(9 downto 0);
 			clk_in : in std_logic;
-			Audio_out : out std_logic_vector(9 downto 0);
+			Audio_out : out std_logic_vector(15 downto 0);
 			clk_codec : in std_logic;
 			tx : in std_logic;
 			key : in std_logic;
@@ -44,9 +44,9 @@ begin
 		if clk_codec'event and clk_codec = '1' then
 			databuff3 <= databuff2;
 			if mute = '0' then
-				Audio_out <= databuff3;
+				Audio_out <= databuff3 & "000000";
 			else
-				Audio_out <= "0000000000";
+				Audio_out <= "0000000000000000";
 			end if;
 		end if;
 	end process;
@@ -749,3 +749,27 @@ audio_out <= RX_audio_in & "000000" when tx = '0' else
 				 TX_audio_in & "000000";
 		
 end filter_arch;
+
+
+library ieee;
+use ieee.std_logic_1164.ALL;
+use ieee.numeric_std.ALL;
+
+entity audio_mux_source is
+	port (audio_int : in std_logic_vector(15 downto 0);
+			audio_i2s : in std_logic_vector(15 downto 0);
+			audio_out : out std_logic_vector(15 downto 0);
+			i2s_audio_in_enable : in std_logic
+			);
+end audio_mux_source;
+
+architecture mux_arch of audio_mux_source is
+
+begin
+
+audio_out <= audio_int when i2s_audio_in_enable = '0' else
+				 audio_i2s;
+		
+end mux_arch;
+
+

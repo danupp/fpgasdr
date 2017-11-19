@@ -52,10 +52,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "GPIO3",
-					"strict" : false
-				},
-				{
 					"name" : "GPIO4",
 					"strict" : false
 				},
@@ -237,6 +233,10 @@
 				},
 				{
 					"name" : "CODEC_DOUT",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO3",
 					"strict" : false
 				}
 			]

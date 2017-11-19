@@ -111,7 +111,8 @@ Simply transmit [0x00 0x00 0x00 0x00 0x00] to read without altering any register
 
 ** I2S
 
-When i2s is enabled, LRCLK/FS is GPIO4, BCLK is GPIO5 and DOUT is GPIO6. 
+When i2s is enabled, LRCLK/FS is GPIO4, BCLK is GPIO5, DIN is GPIO3 and DOUT is GPIO6. 
 39.0625 ksps. 32 bit mode for IQ and 16 bit mode for audio.
 IQ is 2x24 bits padded with 8 LSB zeroes.
+Audio fed to codec/speaker is 16 MSB's of left channel, sampled at DIN.
 Note that I and Q are reversed if using LO above IF.

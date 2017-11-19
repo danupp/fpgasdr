@@ -83,8 +83,8 @@ agreement for further details.
 	(port
 		(pt 232 32)
 		(output)
-		(text "Audio_out[9..0]" (rect 0 0 61 12)(font "Arial" ))
-		(text "Audio_out[9..0]" (rect 150 27 211 39)(font "Arial" ))
+		(text "Audio_out[15..0]" (rect 0 0 64 12)(font "Arial" ))
+		(text "Audio_out[15..0]" (rect 147 27 211 39)(font "Arial" ))
 		(line (pt 232 32)(pt 216 32)(line_width 3))
 	)
 	(drawing
