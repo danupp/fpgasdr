@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2017.11.19.23:47:32"
- outputDirectory="/home/d/devel/dspsdr/fpga/db/ip/clkctrl_main/">
+ date="2019.07.31.20:09:51"
+ outputDirectory="/media/d/2858caf4-89ff-4acc-a535-ad6d23be0307/home/d/devel/dspsdr/fpga/db/ip/clkctrl_main/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -48,33 +48,34 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="clkctrl_main:1.0:AUTO_DEVICE=EP4CE10E22C8,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=8,AUTO_GENERATION_ID=1511131646,AUTO_UNIQUE_ID=(altclkctrl:15.1:CLOCK_TYPE=1,DEVICE_FAMILY=Cyclone IV E,ENA_REGISTER_MODE=1,GUI_USE_ENA=false,NUMBER_OF_CLOCKS=2,USE_GLITCH_FREE_SWITCH_OVER_IMPLEMENTATION=false)"
+   parameterizationKey="clkctrl_main:1.0:AUTO_DEVICE=EP4CE10E22C8,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=8,AUTO_GENERATION_ID=1564596590,AUTO_UNIQUE_ID=(altclkctrl:15.1:CLOCK_TYPE=1,DEVICE_FAMILY=Cyclone IV E,ENA_REGISTER_MODE=1,GUI_USE_ENA=false,NUMBER_OF_CLOCKS=2,USE_GLITCH_FREE_SWITCH_OVER_IMPLEMENTATION=false)"
    instancePathKey="clkctrl_main"
    kind="clkctrl_main"
    version="1.0"
    name="clkctrl_main">
-  <parameter name="AUTO_GENERATION_ID" value="1511131646" />
+  <parameter name="AUTO_GENERATION_ID" value="1564596590" />
   <parameter name="AUTO_DEVICE" value="EP4CE10E22C8" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="8" />
   <generatedFiles>
    <file
-       path="/home/d/devel/dspsdr/fpga/db/ip/clkctrl_main/clkctrl_main.v"
+       path="/media/d/2858caf4-89ff-4acc-a535-ad6d23be0307/home/d/devel/dspsdr/fpga/db/ip/clkctrl_main/clkctrl_main.v"
        type="VERILOG" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="/home/d/devel/dspsdr/fpga/db/ip/clkctrl_main/submodules/clkctrl_main_altclkctrl_0.v"
+       path="/media/d/2858caf4-89ff-4acc-a535-ad6d23be0307/home/d/devel/dspsdr/fpga/db/ip/clkctrl_main/submodules/clkctrl_main_altclkctrl_0.v"
        type="VERILOG"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file path="/home/d/devel/dspsdr/fpga/clkctrl_main.qsys" />
+   <file
+       path="/media/d/2858caf4-89ff-4acc-a535-ad6d23be0307/home/d/devel/dspsdr/fpga/clkctrl_main.qsys" />
   </sourceFiles>
   <childSourceFiles>
    <file
-       path="/home/d/altera_lite/15.1/ip/altera/megafunctions/altclkctrl/altclkctrl_hw.tcl" />
+       path="/media/d/2858caf4-89ff-4acc-a535-ad6d23be0307/home/d/altera_lite/15.1/ip/altera/megafunctions/altclkctrl/altclkctrl_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Debug" culprit="clkctrl_main">queue size: 0 starting:clkctrl_main "clkctrl_main"</message>
@@ -93,7 +94,7 @@
    <message level="Debug" culprit="clkctrl_main"><![CDATA["<b>clkctrl_main</b>" reuses <b>altclkctrl</b> "<b>submodules/clkctrl_main_altclkctrl_0</b>"]]></message>
    <message level="Debug" culprit="clkctrl_main">queue size: 0 starting:altclkctrl "submodules/clkctrl_main_altclkctrl_0"</message>
    <message level="Info" culprit="altclkctrl_0">Generating top-level entity clkctrl_main_altclkctrl_0.</message>
-   <message level="Debug" culprit="altclkctrl_0">Current quartus bindir: /home/d/altera_lite/15.1/quartus/linux64/.</message>
+   <message level="Debug" culprit="altclkctrl_0">Current quartus bindir: /media/d/2858caf4-89ff-4acc-a535-ad6d23be0307/home/d/altera_lite/15.1/quartus/linux64/.</message>
    <message level="Info" culprit="altclkctrl_0"><![CDATA["<b>clkctrl_main</b>" instantiated <b>altclkctrl</b> "<b>altclkctrl_0</b>"]]></message>
   </messages>
  </entity>
@@ -112,21 +113,21 @@
   <parameter name="CLOCK_TYPE" value="1" />
   <generatedFiles>
    <file
-       path="/home/d/devel/dspsdr/fpga/db/ip/clkctrl_main/submodules/clkctrl_main_altclkctrl_0.v"
+       path="/media/d/2858caf4-89ff-4acc-a535-ad6d23be0307/home/d/devel/dspsdr/fpga/db/ip/clkctrl_main/submodules/clkctrl_main_altclkctrl_0.v"
        type="VERILOG"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles/>
   <sourceFiles>
    <file
-       path="/home/d/altera_lite/15.1/ip/altera/megafunctions/altclkctrl/altclkctrl_hw.tcl" />
+       path="/media/d/2858caf4-89ff-4acc-a535-ad6d23be0307/home/d/altera_lite/15.1/ip/altera/megafunctions/altclkctrl/altclkctrl_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="clkctrl_main" as="altclkctrl_0" />
   <messages>
    <message level="Debug" culprit="clkctrl_main">queue size: 0 starting:altclkctrl "submodules/clkctrl_main_altclkctrl_0"</message>
    <message level="Info" culprit="altclkctrl_0">Generating top-level entity clkctrl_main_altclkctrl_0.</message>
-   <message level="Debug" culprit="altclkctrl_0">Current quartus bindir: /home/d/altera_lite/15.1/quartus/linux64/.</message>
+   <message level="Debug" culprit="altclkctrl_0">Current quartus bindir: /media/d/2858caf4-89ff-4acc-a535-ad6d23be0307/home/d/altera_lite/15.1/quartus/linux64/.</message>
    <message level="Info" culprit="altclkctrl_0"><![CDATA["<b>clkctrl_main</b>" instantiated <b>altclkctrl</b> "<b>altclkctrl_0</b>"]]></message>
   </messages>
  </entity>

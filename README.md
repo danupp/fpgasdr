@@ -18,54 +18,67 @@ Please refer to the [register map](/docs/register-map.org) for more information 
 
 ## Changelog
 
-2016-11-12: (built jic binary)
-	* TX works also in direct mode, i.e. modulation directly on the channel frequency, from DAC A. (In indirect mode, the modulated carrier is generated at the IF frequency by DAC B, to pass through a crystal filter.)  
-	(Heavy alias products from upsampling still present.)  
-	* Channel/dial frequency should now not be set adjusted by IF freq. This will be done internally in FPGA. (JIC-file not build.)
-	* Created the Changelog.  
-	* Updated the register-map description.  
+2016-11-12: (built jic binary)  
+* TX works also in direct mode, i.e. modulation directly on the channel frequency, from DAC A. (In indirect mode, the modulated carrier is generated at the IF frequency by DAC B, to pass through a crystal filter.)  
+(Heavy alias products from upsampling still present.)  
+* Channel/dial frequency should now not be set adjusted by IF freq. This will be done internally in FPGA. (JIC-file not build.)
+* Created the Changelog.  
+* Updated the register-map description.  
 	
 2016-11-26:  
-	* Added slightly better upsampling in TX for better spectrum.  
-	* Remove old text in register-map.  
+* Added slightly better upsampling in TX for better spectrum.  
+* Remove old text in register-map.  
 
-2016-12-17: (built jic binary)
-	* Faster I2C communication with audio codec for swift volume control.
-	* Weaver modulator bypass in CW implemented fully, for decent TX spectrum in direct mode with TX signal from DAC A. This is enabled by the cw_tx_nomod configuration bit.
+2016-12-17: (built jic binary)  
+* Faster I2C communication with audio codec for swift volume control.
+* Weaver modulator bypass in CW implemented fully, for decent TX spectrum in direct mode with TX signal from DAC A. This is enabled by the cw_tx_nomod configuration bit.
 
-2016-12-XX: 
-	* Added experimental FM modulation in TX, indirect mode
-	* Added bit in register map for FM mode.
+2016-12-XX:  
+* Added experimental FM modulation in TX, indirect mode
+* Added bit in register map for FM mode.
 
-2017-04-17: (built jic binary)
-	* Squelch implemented.
+2017-04-17: (built jic binary)  
+* Squelch implemented.
 
-2017-05-15: (built jic binary)
-	* Added post agc audio filter in TX
-	* Increased mic gain in codec
-	* Slower agc/compressor release in TX
-	* Larger compressor dynamic
+2017-05-15: (built jic binary)  
+* Added post agc audio filter in TX
+* Increased mic gain in codec
+* Slower agc/compressor release in TX
+* Larger compressor dynamic
 
-2017-05-30: (built jic binary)
-	* Fixed small bug in AGC
-	* Bypassed audio filter after demodulator. It is probably not necessary.
+2017-05-30: (built jic binary)  
+* Fixed small bug in AGC
+* Bypassed audio filter after demodulator. It is probably not necessary.
 
-2017-06-08: (built jic binary)
-	* Another small fix in AGC
-	* Implemented two-tone generation for TX IM measurement. Updated register map.
+2017-06-08: (built jic binary)  
+* Another small fix in AGC
+* Implemented two-tone generation for TX IM measurement. Updated register map.
 
-2017-06-23: (built jic binary)
-	* Faster AGC/compressor release when going into TX, makes it faster to get full power level.
+2017-06-23: (built jic binary)  
+* Faster AGC/compressor release when going into TX, makes it faster to get full power level.
 
-2017-10-09:
-	* Experimental audio output in I2S at 39ksps.
+2017-10-09:  
+* Experimental audio output in I2S at 39ksps.
 
-2017-10-22:
-	* Raw IQ available as I2S.
-	* Modified .gitignore not to remove trx.sof and trx.jic in output_files
+2017-10-22:  
+* Raw IQ available as I2S.
+* Modified .gitignore not to remove trx.sof and trx.jic in output_files
 
-2017-10-25:
-	* I2S output now controllable from register. See register map for details.
+2017-10-25:  
+* I2S output now controllable from register. See register map for details.
 	
-2017-11-19:
-   * With I2S enabled, stream to codec now connected to I2S input.
+2017-11-19:  
+* With I2S enabled, stream to codec now connected to I2S input.
+	
+2018-01-08:  
+* Audio not fed into FPGA in I2S-mode anymore.
+  
+2018-01-12:  
+* Implemented more efficient decimator.  
+  
+2019-07-31:  (built jic binary)
+* Small improvement in AGC.  
+* Line out now enabled together with speaker audio channel.  
+  
+
+

@@ -46,7 +46,7 @@ begin
 	variable peak_b, peak_b_old : integer range 0 to 2047 := 0;
 	variable agc_b, agc_b_I, agc_b_Q : integer range 16 to 31 := 16;
 	variable ticks, timelim : integer range 0 to 99999 := 0;
-	constant timelim_rx : integer := 4000;
+	constant timelim_rx : integer := 10000;
 	constant timelim_tx : integer := 8000;
 	variable Data_out_I_t, Data_out_Q_t : signed(9 downto 0);
 
@@ -90,16 +90,16 @@ begin
 				timelim := timelim_rx;
 			end if;
 				
-	      if peak_b - 20 > peak_b_old or 
+	      if peak_b - 25 > peak_b_old or 
 				--peak_b > 500 or
 				peak_a > agc_a + 1 or 
 				ticks > timelim then
 				
-				if peak_a > agc_a + 1 then
-					agc_a := peak_a;
-					agc_b := 16;
+				--if peak_a > agc_a + 2 then
+					--agc_a := peak_a;
+					--agc_b := 16;
 					
-				elsif (peak_b > 761 and agc_a < 21) or peak_a = agc_a + 1 then
+				if (peak_b > 761 and agc_a < 21) or peak_a > agc_a then
 					agc_a := agc_a + 2;		-- -4
 					agc_b := 31;				-- 1 + 15/16
 			
@@ -286,9 +286,12 @@ begin
 				Data_out_Q_t := signed(Data_in_Q_reg + to_signed(8192,24))(23 downto 14);
 			end if;
 			
+			--Data_out_I_reg <= std_logic_vector(Data_in_I_reg(10 downto 1));  -- BYPASS
+			--Data_out_Q_reg <= std_logic_vector(Data_in_Q_reg(10 downto 1));
+
 			Data_out_I_reg <= std_logic_vector(Data_out_I_t * to_signed(agc_b_I,6))(13 downto 4);
 			Data_out_Q_reg <= std_logic_vector(Data_out_Q_t * to_signed(agc_b_Q,6))(13 downto 4);
-			
+						
 		end if;
 	end process;    
 

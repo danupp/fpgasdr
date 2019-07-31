@@ -33,8 +33,8 @@ constant init_regdata : regdata :=  -- index (3bits) 0 data (8bits)
 			("001001101001",
 			"010000100000",
 			"011000000001",
-			"011001001110",
-			"110010001000", -- spk to dac, reg 6b måste komma före reg 4
+			"011001001100",
+			"110010001100", -- spk+line to dac, reg 6b måste komma före reg 4
 			"101000010110", -- +33dB på ADC
 			"101001010100", -- -30 dB på DAC
 			"101010111111", -- mute sidetones

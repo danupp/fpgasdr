@@ -234,10 +234,6 @@
 				{
 					"name" : "CODEC_DOUT",
 					"strict" : false
-				},
-				{
-					"name" : "GPIO3",
-					"strict" : false
 				}
 			]
 		}
