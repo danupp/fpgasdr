@@ -133,6 +133,23 @@ agreement for further details.
 	)
 )
 (pin
+	(output)
+	(rect -120 64 56 80)
+	(text "OUTPUT" (rect 126 0 175 11)(font "Arial" (font_size 6)))
+	(text "SDA_out" (rect 5 0 72 12)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 176 8)(pt 124 8))
+		(line (pt 124 4)(pt 98 4))
+		(line (pt 124 12)(pt 98 12))
+		(line (pt 124 12)(pt 124 4))
+		(line (pt 98 4)(pt 94 8))
+		(line (pt 94 8)(pt 98 12))
+		(line (pt 98 12)(pt 94 8))
+	)
+	(flipy)
+)
+(pin
 	(bidir)
 	(rect -112 232 64 248)
 	(text "BIDIR" (rect 134 0 175 11)(font "Arial" (font_size 6)))
@@ -232,21 +249,21 @@ agreement for further details.
 		(pt 216 32)
 		(output)
 		(text "addr[7..0]" (rect 0 0 94 12)(font "Arial" ))
-		(text "addr[7..0]" (rect 116 27 195 39)(font "Arial" ))
+		(text "addr[7..0]" (rect 116 27 210 39)(font "Arial" ))
 		(line (pt 216 32)(pt 200 32)(line_width 3))
 	)
 	(port
 		(pt 216 48)
 		(output)
 		(text "data[31..0]" (rect 0 0 103 12)(font "Arial" ))
-		(text "data[31..0]" (rect 108 43 195 55)(font "Arial" ))
+		(text "data[31..0]" (rect 108 43 211 55)(font "Arial" ))
 		(line (pt 216 48)(pt 200 48)(line_width 3))
 	)
 	(port
 		(pt 216 64)
 		(output)
 		(text "strobe" (rect 0 0 56 12)(font "Arial" ))
-		(text "strobe" (rect 148 59 195 71)(font "Arial" ))
+		(text "strobe" (rect 148 59 204 71)(font "Arial" ))
 		(line (pt 216 64)(pt 200 64))
 	)
 	(drawing
@@ -289,21 +306,21 @@ agreement for further details.
 		(pt 240 48)
 		(output)
 		(text "Data_addr[7..0]" (rect 0 0 141 12)(font "Arial" ))
-		(text "Data_addr[7..0]" (rect 100 43 219 55)(font "Arial" ))
+		(text "Data_addr[7..0]" (rect 100 43 241 55)(font "Arial" ))
 		(line (pt 240 48)(pt 224 48)(line_width 3))
 	)
 	(port
 		(pt 240 64)
 		(output)
 		(text "Data_word[31..0]" (rect 0 0 151 12)(font "Arial" ))
-		(text "Data_word[31..0]" (rect 92 59 219 71)(font "Arial" ))
+		(text "Data_word[31..0]" (rect 92 59 243 71)(font "Arial" ))
 		(line (pt 240 64)(pt 224 64)(line_width 3))
 	)
 	(port
 		(pt 240 80)
 		(output)
 		(text "Strobe" (rect 0 0 56 12)(font "Arial" ))
-		(text "Strobe" (rect 172 75 219 87)(font "Arial" ))
+		(text "Strobe" (rect 172 75 228 87)(font "Arial" ))
 		(line (pt 240 80)(pt 224 80))
 	)
 	(port
@@ -318,29 +335,43 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 248 112 488 224)
+	(rect 248 96 488 208)
 	(text "i2c_slave" (rect 5 0 89 12)(font "Arial" ))
 	(text "inst" (rect 8 96 45 108)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "SCL" (rect 0 0 28 12)(font "Arial" ))
-		(text "SCL" (rect 21 27 49 39)(font "Arial" ))
+		(text "SDA_in" (rect 0 0 56 12)(font "Arial" ))
+		(text "SDA_in" (rect 21 27 77 39)(font "Arial" ))
 		(line (pt 0 32)(pt 16 32))
 	)
 	(port
 		(pt 0 48)
 		(input)
-		(text "Status_data[7..0]" (rect 0 0 160 12)(font "Arial" ))
-		(text "Status_data[7..0]" (rect 21 43 181 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
+		(text "SCL" (rect 0 0 28 12)(font "Arial" ))
+		(text "SCL" (rect 21 43 49 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
 	)
 	(port
 		(pt 0 64)
 		(input)
+		(text "Status_data[7..0]" (rect 0 0 160 12)(font "Arial" ))
+		(text "Status_data[7..0]" (rect 21 59 181 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
 		(text "enable" (rect 0 0 56 12)(font "Arial" ))
-		(text "enable" (rect 21 59 77 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
+		(text "enable" (rect 21 75 77 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 240 32)
+		(output)
+		(text "SDA_out" (rect 0 0 66 12)(font "Arial" ))
+		(text "SDA_out" (rect 164 27 219 39)(font "Arial" ))
+		(line (pt 240 32)(pt 224 32))
 	)
 	(port
 		(pt 240 48)
@@ -363,13 +394,6 @@ agreement for further details.
 		(text "Strobe" (rect 172 75 219 87)(font "Arial" ))
 		(line (pt 240 80)(pt 224 80))
 	)
-	(port
-		(pt 240 32)
-		(bidir)
-		(text "SDA" (rect 0 0 28 12)(font "Arial" ))
-		(text "SDA" (rect 198 27 226 39)(font "Arial" ))
-		(line (pt 240 32)(pt 224 32))
-	)
 	(drawing
 		(rectangle (rect 16 16 224 96))
 	)
@@ -380,41 +404,13 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 616 208)
-	(pt 616 160)
-	(bus)
-)
-(connector
-	(pt 616 160)
-	(pt 488 160)
-	(bus)
-)
-(connector
 	(pt 680 224)
 	(pt 600 224)
 	(bus)
 )
 (connector
-	(pt 600 224)
-	(pt 600 176)
-	(bus)
-)
-(connector
-	(pt 600 176)
-	(pt 488 176)
-	(bus)
-)
-(connector
 	(pt 680 240)
 	(pt 584 240)
-)
-(connector
-	(pt 584 240)
-	(pt 584 192)
-)
-(connector
-	(pt 584 192)
-	(pt 488 192)
 )
 (connector
 	(pt 680 256)
@@ -463,16 +459,8 @@ agreement for further details.
 	(pt 512 336)
 )
 (connector
-	(pt 488 144)
-	(pt 512 144)
-)
-(connector
 	(pt 248 336)
 	(pt 224 336)
-)
-(connector
-	(pt 248 144)
-	(pt 224 144)
 )
 (connector
 	(pt 680 304)
@@ -519,20 +507,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 200 160)
-	(pt 248 160)
-	(bus)
-)
-(connector
-	(pt 112 160)
-	(pt 200 160)
-	(bus)
-)
-(connector
-	(pt 248 176)
-	(pt 96 176)
-)
-(connector
 	(pt 96 176)
 	(pt 96 352)
 )
@@ -557,18 +531,6 @@ agreement for further details.
 	(pt 160 488)
 )
 (connector
-	(pt 64 240)
-	(pt 512 240)
-)
-(connector
-	(pt 512 144)
-	(pt 512 240)
-)
-(connector
-	(pt 512 240)
-	(pt 512 336)
-)
-(connector
 	(pt 64 264)
 	(pt 224 264)
 )
@@ -580,7 +542,85 @@ agreement for further details.
 	(pt 224 264)
 	(pt 224 336)
 )
-(junction (pt 200 160))
+(connector
+	(pt 616 208)
+	(pt 616 144)
+	(bus)
+)
+(connector
+	(pt 616 144)
+	(pt 488 144)
+	(bus)
+)
+(connector
+	(pt 600 224)
+	(pt 600 160)
+	(bus)
+)
+(connector
+	(pt 600 160)
+	(pt 488 160)
+	(bus)
+)
+(connector
+	(pt 584 240)
+	(pt 584 176)
+)
+(connector
+	(pt 584 176)
+	(pt 488 176)
+)
+(connector
+	(pt 512 128)
+	(pt 488 128)
+)
+(connector
+	(pt 512 240)
+	(pt 512 336)
+)
+(connector
+	(pt 224 144)
+	(pt 248 144)
+)
+(connector
+	(pt 112 160)
+	(pt 200 160)
+	(bus)
+)
+(connector
+	(pt 200 160)
+	(pt 248 160)
+	(bus)
+)
+(connector
+	(pt 248 176)
+	(pt 96 176)
+)
+(connector
+	(pt 248 128)
+	(pt 160 128)
+)
+(connector
+	(pt 160 128)
+	(pt 160 240)
+)
+(connector
+	(pt 64 240)
+	(pt 160 240)
+)
+(connector
+	(pt 160 240)
+	(pt 512 240)
+)
+(connector
+	(pt 512 72)
+	(pt 512 128)
+)
+(connector
+	(pt 512 72)
+	(pt 56 72)
+)
 (junction (pt 96 352))
-(junction (pt 512 240))
 (junction (pt 224 264))
+(junction (pt 200 160))
+(junction (pt 160 240))

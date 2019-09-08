@@ -80,5 +80,10 @@ Please refer to the [register map](/docs/register-map.org) for more information 
 * Small improvement in AGC.  
 * Line out now enabled together with speaker audio channel.  
   
+2019-09-08:  (built jic binary)  
+* All codec setup now removed from FPGA and put onto the host mcu to do. I2C bridge added for this purpose. UART mode removed.  
+* Codew written for noise blanker after decimation filter, not implemented.  
+
+  
 
 

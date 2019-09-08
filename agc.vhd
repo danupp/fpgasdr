@@ -41,13 +41,13 @@ begin
 	
 	
 	p0: process (clk_in)
-	variable peak_a : integer range 0 to 22;
+	variable peak_a, peak_aa : integer range 0 to 22;
 	variable agc_a, agc_a_I, agc_a_Q : integer range 8 to 22 := 16;
 	variable peak_b, peak_b_old : integer range 0 to 2047 := 0;
 	variable agc_b, agc_b_I, agc_b_Q : integer range 16 to 31 := 16;
 	variable ticks, timelim : integer range 0 to 99999 := 0;
 	constant timelim_rx : integer := 10000;
-	constant timelim_tx : integer := 8000;
+	constant timelim_tx : integer := 5000;
 	variable Data_out_I_t, Data_out_Q_t : signed(9 downto 0);
 
 	begin
@@ -90,16 +90,23 @@ begin
 				timelim := timelim_rx;
 			end if;
 				
-	      if peak_b - 25 > peak_b_old or 
+			
+	      if (tx = '1' and (peak_b - 25 > peak_b_old or 
 				--peak_b > 500 or
 				peak_a > agc_a + 1 or 
-				ticks > timelim then
-				
+				ticks > timelim)) or
+				(tx = '0' and ticks > timelim) then
+
 				--if peak_a > agc_a + 2 then
 					--agc_a := peak_a;
 					--agc_b := 16;
-					
-				if (peak_b > 761 and agc_a < 21) or peak_a > agc_a then
+				
+				if peak_a > agc_a then
+					if peak_aa > agc_a then
+						agc_a := agc_a + 2;		-- -4
+						agc_b := 31; -- 1 + 15/16
+					end if;
+				elsif peak_b > 761 and agc_a < 21 then
 					agc_a := agc_a + 2;		-- -4
 					agc_b := 31;				-- 1 + 15/16
 			
@@ -254,6 +261,7 @@ begin
 				
 				rssi <= std_logic_vector(to_unsigned(peak_a,6));
 				
+				peak_aa := peak_a;
 				peak_a := 0;
 				peak_b := 0;
 				ticks := 0;

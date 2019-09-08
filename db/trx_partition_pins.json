@@ -216,10 +216,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "JP1",
-					"strict" : false
-				},
-				{
 					"name" : "CODEC_FS",
 					"strict" : false
 				},

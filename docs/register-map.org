@@ -50,12 +50,12 @@ Variable values are explained in the table further down.
 |      |   8 | reserved    | freq     | squelch	   |
 |    4 |   7 | reserved    | freq     | reserved   |
 |      |   6 | reserved    | freq     | reserved   |
-|      |   5 | reserved    | freq     | audio gain |
-|      |   4 | reserved    | freq     | audio gain |
-|      |   3 | reserved    | freq     | audio gain |
-|      |   2 | reserved    | freq     | audio gain |
-|      |   1 | reserved    | freq     | audio gain |
-|      |   0 | reserved    | freq     | audio gain |
+|      |   5 | reserved    | freq     | reserved (formerly audio gain) |
+|      |   4 | reserved    | freq     | reserved (formerly audio gain) |
+|      |   3 | reserved    | freq     | reserved (formerly audio gain) |
+|      |   2 | reserved    | freq     | reserved (formerly audio gain) |
+|      |   1 | reserved    | freq     | reserved (formerly audio gain) |
+|      |   0 | reserved    | freq     | reserved (formerly audio gain) |
 
 
 
