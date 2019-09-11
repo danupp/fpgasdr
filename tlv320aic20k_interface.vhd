@@ -260,10 +260,10 @@ entity TLV320AIC20K_intf_noI2C is
 			DIN : out std_logic;
 			DOUT : in std_logic;
 			clk0 : in std_logic;
+			ch0_in : in std_logic_vector(15 downto 0);
 			ch1_in : in std_logic_vector(15 downto 0);
-			ch2_in : in std_logic_vector(15 downto 0);
+			ch0_out : out std_logic_vector(15 downto 0);
 			ch1_out : out std_logic_vector(15 downto 0);
-			ch2_out : out std_logic_vector(15 downto 0);
 			POR : in std_logic_vector (1 downto 0)
 			);
 end TLV320AIC20K_intf_noI2C;
@@ -287,14 +287,14 @@ begin
 		FS_delay := '0';
 	elsif SCLK'event and SCLK = '0' and FS = '1' then
 		ch1_out <= data_from_codec(30 downto 15);
-		ch2_out <= data_from_codec(14 downto 0) & DOUT;
+		ch0_out <= data_from_codec(14 downto 0) & DOUT;
 		FS_delay := '1';
 	elsif SCLK'event and SCLK = '1' and FS_delay = '0' then
 		DIN <= data_to_codec(30);
 		data_to_codec(30 downto 0) <= data_to_codec(29 downto 0) & '0';
 	elsif SCLK'event and SCLK = '1' and FS_delay = '1' then
-		DIN <= ch1_in(15);
-		data_to_codec <= ch1_in (14 downto 0) & ch2_in;
+		DIN <= ch0_in(15);
+		data_to_codec <= ch1_in (14 downto 0) & ch1_in;
 	end if;
 end process data_transfer;
 
