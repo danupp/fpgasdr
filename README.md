@@ -87,5 +87,8 @@ Please refer to the [register map](/docs/register-map.org) for more information 
 2019-09-11: (built jic)
 * Fixed bug with missing mic audio.  
   
+2019-11-19: (built jic)  
+* Going back to old AGC, as before 2019-07-31 commit.  
+
 
 
